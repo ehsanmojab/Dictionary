@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dictionary
+namespace Dictionary_WindowsFrom
 {
     class Dictionary
     {
@@ -20,7 +20,7 @@ namespace Dictionary
             var parent = new Node();
             if (HashTable[index].Insert(xnode))
             {
-                parent = HashTable[index].Search_parent_of(ref HashTable[index].root, xnode);
+                parent = HashTable[index].parent_of(ref HashTable[index].root, xnode);
                 HashTable[index].Print_parent(parent, xnode);
                 return true;
             }

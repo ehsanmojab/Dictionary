@@ -1,4 +1,4 @@
-﻿namespace Dictionary
+﻿namespace Dictionary_WindowsFrom
 {
     class Node
     {

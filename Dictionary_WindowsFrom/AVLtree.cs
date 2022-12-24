@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dictionary
+namespace Dictionary_WindowsFrom
 {
     class AVLtree
     {
@@ -26,7 +26,6 @@ namespace Dictionary
                 return false;
             else
             {
-                //BF
                 return true;
             }
 
@@ -302,7 +301,7 @@ namespace Dictionary
                 if (root.lchild.word == xnode.word)
                 {
                     Console.Write("parent of {0} is : ", xnode.word);
-                    Print(Search_parent_of(ref root, xnode));
+                    Print(parent_of(ref root, xnode));
                     Console.Write("left child of {0} is : ", xnode.word);
                     Print(root.lchild.lchild);
                     Console.Write("right child of {0} is : ", xnode.word);
@@ -320,7 +319,7 @@ namespace Dictionary
                 if (root.rchild.word == xnode.word)
                 {
                     Console.Write("parent of {0} is : ", xnode.word);
-                    Print(Search_parent_of(ref root, xnode));
+                    Print(parent_of(ref root, xnode));
 
                     Console.Write("left child of {0} is : ", xnode.word);
                     Print(root.rchild.lchild);
@@ -347,7 +346,7 @@ namespace Dictionary
 
             return flag;
         }
-        public Node Search_parent_of(ref Node root, Node xnode) // returns parent of the node we are searching for
+        public Node parent_of(ref Node root, Node xnode) // returns parent of the node we are searching for
         {
             if (root.word == xnode.word)
                 return null;
@@ -366,9 +365,9 @@ namespace Dictionary
             }
 
             if (xnode < root)
-                return Search_parent_of(ref root.lchild, xnode);
+                return parent_of(ref root.lchild, xnode);
             else if (xnode > root)
-                return Search_parent_of(ref root.rchild, xnode);
+                return parent_of(ref root.rchild, xnode);
             else
                 return null;
         }
