@@ -34,6 +34,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtword = new System.Windows.Forms.TextBox();
             this.txtmeaning = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +79,7 @@
             // 
             this.txtword.Location = new System.Drawing.Point(219, 97);
             this.txtword.Name = "txtword";
-            this.txtword.Size = new System.Drawing.Size(346, 42);
+            this.txtword.Size = new System.Drawing.Size(355, 42);
             this.txtword.TabIndex = 0;
             // 
             // txtmeaning
@@ -86,11 +89,39 @@
             this.txtmeaning.Size = new System.Drawing.Size(355, 42);
             this.txtmeaning.TabIndex = 1;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 35;
+            this.listBox1.Location = new System.Drawing.Point(58, 369);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(515, 214);
+            this.listBox1.TabIndex = 3;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 35;
+            this.listBox2.Location = new System.Drawing.Point(604, 369);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(552, 214);
+            this.listBox2.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(58, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1097, 200);
+            this.panel1.TabIndex = 5;
+            // 
             // Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 594);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.txtmeaning);
             this.Controls.Add(this.txtword);
             this.Controls.Add(this.label4);
@@ -99,7 +130,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "Dictionary";
             this.Text = "Dictionary";
@@ -116,6 +147,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtword;
         private System.Windows.Forms.TextBox txtmeaning;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
