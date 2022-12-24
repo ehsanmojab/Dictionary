@@ -16,5 +16,6 @@ namespace Dictionary_WindowsFrom
         {
             InitializeComponent();
         }
+
     }
 }

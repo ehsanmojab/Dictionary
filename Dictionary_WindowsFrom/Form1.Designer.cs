@@ -37,10 +37,10 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnPrintDictionary = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -118,50 +118,51 @@
             // 
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnPrintDictionary);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Location = new System.Drawing.Point(58, 154);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1097, 200);
             this.panel1.TabIndex = 5;
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.Location = new System.Drawing.Point(15, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(15, 13);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(140, 70);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(195, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 70);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(195, 13);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(140, 70);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSearch
             // 
-            this.button3.Location = new System.Drawing.Point(376, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 70);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(376, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(140, 70);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnPrintDictionary
             // 
-            this.button4.Location = new System.Drawing.Point(546, 13);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 70);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPrintDictionary.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintDictionary.Location = new System.Drawing.Point(546, 13);
+            this.btnPrintDictionary.Name = "btnPrintDictionary";
+            this.btnPrintDictionary.Size = new System.Drawing.Size(140, 70);
+            this.btnPrintDictionary.TabIndex = 3;
+            this.btnPrintDictionary.Text = "Print all Dictionary";
+            this.btnPrintDictionary.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -220,10 +221,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPrintDictionary;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnInsert;
     }
 }
 
