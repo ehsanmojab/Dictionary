@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dictionary_Form));
-            this.label1 = new System.Windows.Forms.Label();
             this.lblsubject = new System.Windows.Forms.Label();
             this.lblword = new System.Windows.Forms.Label();
             this.lblmeaning = new System.Windows.Forms.Label();
@@ -51,27 +50,17 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(408, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Personal Dictionary";
-            // 
             // lblsubject
             // 
             this.lblsubject.AutoSize = true;
             this.lblsubject.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.lblsubject.Font = new System.Drawing.Font("Calibri", 20F);
-            this.lblsubject.Location = new System.Drawing.Point(382, 9);
+            this.lblsubject.Location = new System.Drawing.Point(420, 9);
             this.lblsubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsubject.Name = "lblsubject";
-            this.lblsubject.Size = new System.Drawing.Size(336, 49);
+            this.lblsubject.Size = new System.Drawing.Size(188, 49);
             this.lblsubject.TabIndex = 7;
-            this.lblsubject.Text = "Personal Dictionary";
+            this.lblsubject.Text = "Dictionary";
             // 
             // lblword
             // 
@@ -279,7 +268,6 @@
             this.Controls.Add(this.lblmeaning);
             this.Controls.Add(this.lblword);
             this.Controls.Add(this.lblsubject);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -296,8 +284,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblsubject;
         private System.Windows.Forms.Label lblword;
         private System.Windows.Forms.Label lblmeaning;

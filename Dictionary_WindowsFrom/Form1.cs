@@ -215,7 +215,7 @@ namespace Dictionary_WindowsFrom
                 listBox2.Items.Add("Node found in root!");
 
                 var node = D.HashTable[word[0] - 97].SearchRD(ref D.HashTable[word[0] - 97].root, xnode);
-
+                listBox2.Items.Add("meaning : " + node.meaning);
                 listBox2.Items.Add("Left Child : " + Print(node.lchild));
                 listBox2.Items.Add("Right Child : " + Print(node.rchild));
                 listBox2.Items.Add("height : " + (node.height - 1).ToString() + '\n');
@@ -228,6 +228,7 @@ namespace Dictionary_WindowsFrom
                     listBox2.Items.Add("parent of " + word + " : " + parent.word);
                     if (parent.lchild.word == xnode.word)
                     {
+                        listBox2.Items.Add("meaning : " + parent.lchild.meaning);
                         listBox2.Items.Add("Left Child : " + Print(parent.lchild.lchild));
                         listBox2.Items.Add("Right Child : " + Print(parent.lchild.rchild));
                         listBox2.Items.Add("Number of Search : " + counter.ToString());
@@ -239,6 +240,7 @@ namespace Dictionary_WindowsFrom
                     listBox2.Items.Add("parent of " + word + " : " + parent.word);
                     if (parent.rchild.word == xnode.word)
                     {
+                        listBox2.Items.Add("meaning : " + parent.rchild.meaning);
                         listBox2.Items.Add("Left Child : " + Print(parent.rchild.lchild));
                         listBox2.Items.Add("Right Child : " + Print(parent.rchild.rchild));
                         listBox2.Items.Add("Number of Search : " + counter.ToString());
