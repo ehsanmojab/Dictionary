@@ -371,7 +371,64 @@ namespace Dictionary_WindowsFrom
             else
                 return null;
         }
+        public Node SearchRD(ref Node root, Node xnode)// searchs for the node and returns it
+        {
+            if (root != null)
+            {
+                if (root.word == xnode.word)
+                {
+                    return root;
+                }
+            }
 
+            if (xnode < root)
+                return SearchRD(ref root.lchild, xnode);
+            else if (xnode < root)
+                return SearchRD(ref root.rchild, xnode);
+            else
+                return null;
+        }
+
+        public Node parent_of(ref Node root, Node xnode, ref int counter) // returns parent of the node we are searching for
+        {
+            if (root.word == xnode.word)
+                return null;
+            else if (root != null)
+            {
+                if (root.lchild != null)
+                {
+                    if (root.lchild.word == xnode.word)
+                    {
+                        counter++;
+                        return root;
+                    }
+                }
+                if (root.rchild != null)
+                {
+                    if (root.rchild.word == xnode.word)
+                    {
+                        counter++;
+                        return root;
+                    }
+                }
+            }
+
+            if (xnode < root)
+            {
+                counter++;
+                return parent_of(ref root.lchild, xnode);
+            }
+            else if (xnode > root)
+            {
+                counter++;
+                return parent_of(ref root.rchild, xnode);
+            }
+            else
+            {
+                counter++;
+                return null;
+            }
+        }
         public Node Delete(ref Node root, Node xnode, ref bool flag)
         {
             if (root == null)
