@@ -383,7 +383,7 @@ namespace Dictionary_WindowsFrom
 
             if (xnode < root)
                 return SearchRD(ref root.lchild, xnode);
-            else if (xnode < root)
+            else if (xnode > root)
                 return SearchRD(ref root.rchild, xnode);
             else
                 return null;
@@ -391,6 +391,8 @@ namespace Dictionary_WindowsFrom
 
         public Node parent_of(ref Node root, Node xnode, ref int counter) // returns parent of the node we are searching for
         {
+            if (root == null)
+                return null;
             if (root.word == xnode.word)
                 return null;
             else if (root != null)

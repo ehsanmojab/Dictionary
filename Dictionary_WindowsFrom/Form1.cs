@@ -164,10 +164,7 @@ namespace Dictionary_WindowsFrom
             }
             else
             {
-                
-                //D.Inorder(txtword.Text.ToLower()[0]);
                 listBox2.Items.Clear();
-                D.Inorder('a');
 
                 Inorder(txtword.Text[0]);
 
@@ -177,11 +174,6 @@ namespace Dictionary_WindowsFrom
                 lblword.Text = "Enter Word : ";
             }
         }
-
-            private void txtword_TextChanged(object sender, EventArgs e)
-            {
-
-            }
         // hide enter meaning box
         // and change lable of enter word to enter a char
         public void Inorder(char ch)
@@ -204,9 +196,19 @@ namespace Dictionary_WindowsFrom
             string word = txtword.Text.ToLower();
             string meaning = txtmeaning.Text.ToLower();
 
+            if (word.Length < 1)
+                return;
+
             var xnode = new Node(word, meaning);
             int counter = 0;
             Node parent = D.HashTable[word[0] - 97].parent_of(ref D.HashTable[word[0] - 97].root, xnode, ref counter);
+
+            if (D.HashTable[word[0] - 97].root == null)
+            {
+                listBox2.Items.Add("this word dosen't exist in dictionary!");
+                return;
+            }
+
 
             if (parent == null)
             {
@@ -215,10 +217,11 @@ namespace Dictionary_WindowsFrom
                 var node = D.HashTable[word[0] - 97].SearchRD(ref D.HashTable[word[0] - 97].root, xnode);
 
                 listBox2.Items.Add("Left Child : " + Print(node.lchild));
-                listBox2.Items.Add("Right Child : " + Print(node.rchild) + '\n');
+                listBox2.Items.Add("Right Child : " + Print(node.rchild));
+                listBox2.Items.Add("height : " + (node.height - 1).ToString() + '\n');
             }
 
-            else
+            else if(parent != null)
             {
                 if (parent.lchild != null)
                 {
@@ -227,7 +230,8 @@ namespace Dictionary_WindowsFrom
                     {
                         listBox2.Items.Add("Left Child : " + Print(parent.lchild.lchild));
                         listBox2.Items.Add("Right Child : " + Print(parent.lchild.rchild));
-                        listBox2.Items.Add("Number of Search : " + counter.ToString() + '\n');
+                        listBox2.Items.Add("Number of Search : " + counter.ToString());
+                        listBox2.Items.Add("height : " + (parent.lchild.height - 1).ToString() + '\n');
                     }
                 }
                 if (parent.rchild != null)
@@ -237,9 +241,14 @@ namespace Dictionary_WindowsFrom
                     {
                         listBox2.Items.Add("Left Child : " + Print(parent.rchild.lchild));
                         listBox2.Items.Add("Right Child : " + Print(parent.rchild.rchild));
-                        listBox2.Items.Add("Number of Search : " + counter.ToString() +'\n');
+                        listBox2.Items.Add("Number of Search : " + counter.ToString());
+                        listBox2.Items.Add("height : " + (parent.rchild.height - 1).ToString() + '\n');
                     }
                 }
+            }
+            else
+            {
+                listBox2.Items.Add("this word dosen't exist in dictionary!");
             }
         }
 
@@ -248,6 +257,43 @@ namespace Dictionary_WindowsFrom
             for (int i = 0; i < 26; i++)
             {
                 Inorder((char)(i+97));
+            }
+        }
+
+        private void btnInorder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+                btnInorder_Click(sender, e);
+        }
+
+        private void btntest_Click(object sender, EventArgs e)
+        {
+            string word = txtword.Text;
+            if (word.Length < 1)
+                return;
+
+            if (D.HashTable[word.ToLower()[0] - 97].root == null)
+                return;
+
+            var ans = D.HashTable[word[0] - 97].SearchRD(ref D.HashTable[word.ToLower()[0] - 97].root, new Node(word, ""));
+
+            if (ans == null)
+                return;
+
+            if (ans != null)
+            {
+
+                string meaning = txtmeaning.Text.ToLower();
+
+                if (meaning == ans.meaning)
+                {
+                    listBox1.Items.Add("correct!\n");
+                }
+                else
+                {
+                    listBox1.Items.Add("not correct! Try again!");
+                }
+
             }
         }
     }
