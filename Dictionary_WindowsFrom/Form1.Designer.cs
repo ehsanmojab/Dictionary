@@ -95,6 +95,7 @@
             // 
             // txtword
             // 
+            this.txtword.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtword.Location = new System.Drawing.Point(188, 81);
             this.txtword.Margin = new System.Windows.Forms.Padding(2);
             this.txtword.Name = "txtword";
