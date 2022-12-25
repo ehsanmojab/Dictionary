@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dictionary_Form));
             this.label1 = new System.Windows.Forms.Label();
             this.lblsubject = new System.Windows.Forms.Label();
             this.lblword = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.lbllog = new System.Windows.Forms.Label();
             this.lblNodeStatus = new System.Windows.Forms.Label();
+            this.lblclear = new System.Windows.Forms.Label();
+            this.lblclearlist = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,18 +65,18 @@
             // 
             this.lblsubject.AutoSize = true;
             this.lblsubject.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.lblsubject.Font = new System.Drawing.Font("Calibri", 14F);
-            this.lblsubject.Location = new System.Drawing.Point(408, 24);
+            this.lblsubject.Font = new System.Drawing.Font("Calibri", 20F);
+            this.lblsubject.Location = new System.Drawing.Point(382, 9);
             this.lblsubject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsubject.Name = "lblsubject";
-            this.lblsubject.Size = new System.Drawing.Size(235, 35);
+            this.lblsubject.Size = new System.Drawing.Size(336, 49);
             this.lblsubject.TabIndex = 7;
             this.lblsubject.Text = "Personal Dictionary";
             // 
             // lblword
             // 
             this.lblword.AutoSize = true;
-            this.lblword.Location = new System.Drawing.Point(46, 83);
+            this.lblword.Location = new System.Drawing.Point(48, 83);
             this.lblword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblword.Name = "lblword";
             this.lblword.Size = new System.Drawing.Size(136, 29);
@@ -83,7 +86,7 @@
             // lblmeaning
             // 
             this.lblmeaning.AutoSize = true;
-            this.lblmeaning.Location = new System.Drawing.Point(514, 83);
+            this.lblmeaning.Location = new System.Drawing.Point(514, 86);
             this.lblmeaning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmeaning.Name = "lblmeaning";
             this.lblmeaning.Size = new System.Drawing.Size(170, 29);
@@ -93,7 +96,7 @@
             // txtword
             // 
             this.txtword.Location = new System.Drawing.Point(188, 81);
-            this.txtword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtword.Margin = new System.Windows.Forms.Padding(2);
             this.txtword.Name = "txtword";
             this.txtword.Size = new System.Drawing.Size(305, 37);
             this.txtword.TabIndex = 0;
@@ -103,8 +106,9 @@
             // txtmeaning
             // 
             this.txtmeaning.Location = new System.Drawing.Point(686, 83);
-            this.txtmeaning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmeaning.Margin = new System.Windows.Forms.Padding(2);
             this.txtmeaning.Name = "txtmeaning";
+            this.txtmeaning.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtmeaning.Size = new System.Drawing.Size(305, 37);
             this.txtmeaning.TabIndex = 1;
             this.txtmeaning.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmeaning_KeyDown);
@@ -114,7 +118,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 29;
             this.listBox1.Location = new System.Drawing.Point(62, 249);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(429, 207);
             this.listBox1.TabIndex = 3;
@@ -125,7 +129,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 29;
             this.listBox2.Location = new System.Drawing.Point(518, 248);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(429, 207);
             this.listBox2.TabIndex = 4;
@@ -139,7 +143,7 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnInsert);
             this.panel1.Location = new System.Drawing.Point(50, 128);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 87);
             this.panel1.TabIndex = 2;
@@ -147,7 +151,7 @@
             // btntest
             // 
             this.btntest.Location = new System.Drawing.Point(782, 11);
-            this.btntest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btntest.Margin = new System.Windows.Forms.Padding(2);
             this.btntest.Name = "btntest";
             this.btntest.Size = new System.Drawing.Size(120, 58);
             this.btntest.TabIndex = 5;
@@ -158,7 +162,7 @@
             // btnInorder
             // 
             this.btnInorder.Location = new System.Drawing.Point(623, 11);
-            this.btnInorder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInorder.Margin = new System.Windows.Forms.Padding(2);
             this.btnInorder.Name = "btnInorder";
             this.btnInorder.Size = new System.Drawing.Size(120, 58);
             this.btnInorder.TabIndex = 4;
@@ -171,7 +175,7 @@
             // 
             this.btnPrintDictionary.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintDictionary.Location = new System.Drawing.Point(468, 11);
-            this.btnPrintDictionary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrintDictionary.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintDictionary.Name = "btnPrintDictionary";
             this.btnPrintDictionary.Size = new System.Drawing.Size(120, 58);
             this.btnPrintDictionary.TabIndex = 3;
@@ -182,7 +186,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(322, 11);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(120, 58);
             this.btnSearch.TabIndex = 2;
@@ -194,7 +198,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnDelete.Location = new System.Drawing.Point(167, 11);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 58);
             this.btnDelete.TabIndex = 1;
@@ -207,7 +211,7 @@
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnInsert.ForeColor = System.Drawing.Color.Black;
             this.btnInsert.Location = new System.Drawing.Point(13, 11);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(120, 58);
             this.btnInsert.TabIndex = 0;
@@ -235,11 +239,35 @@
             this.lblNodeStatus.TabIndex = 7;
             this.lblNodeStatus.Text = "Nodes Status";
             // 
+            // lblclear
+            // 
+            this.lblclear.AutoSize = true;
+            this.lblclear.BackColor = System.Drawing.Color.LightCoral;
+            this.lblclear.Location = new System.Drawing.Point(881, 453);
+            this.lblclear.Name = "lblclear";
+            this.lblclear.Size = new System.Drawing.Size(98, 29);
+            this.lblclear.TabIndex = 8;
+            this.lblclear.Text = "Clear list";
+            this.lblclear.Click += new System.EventHandler(this.lblclear_Click);
+            // 
+            // lblclearlist
+            // 
+            this.lblclearlist.AutoSize = true;
+            this.lblclearlist.BackColor = System.Drawing.Color.LightCoral;
+            this.lblclearlist.Location = new System.Drawing.Point(424, 453);
+            this.lblclearlist.Name = "lblclearlist";
+            this.lblclearlist.Size = new System.Drawing.Size(98, 29);
+            this.lblclearlist.TabIndex = 9;
+            this.lblclearlist.Text = "Clear list";
+            this.lblclearlist.Click += new System.EventHandler(this.lblclearlist_Click);
+            // 
             // Dictionary_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 479);
+            this.ClientSize = new System.Drawing.Size(1003, 491);
+            this.Controls.Add(this.lblclearlist);
+            this.Controls.Add(this.lblclear);
             this.Controls.Add(this.lbllog);
             this.Controls.Add(this.lblNodeStatus);
             this.Controls.Add(this.panel1);
@@ -253,7 +281,8 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Dictionary_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -284,6 +313,8 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label lblNodeStatus;
         private System.Windows.Forms.Label lbllog;
+        private System.Windows.Forms.Label lblclear;
+        private System.Windows.Forms.Label lblclearlist;
     }
 }
 

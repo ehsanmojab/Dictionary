@@ -37,11 +37,11 @@ namespace Dictionary_WindowsFrom
             {
                 int index = word.ToLower()[0] - 97;
                 var parent = D.HashTable[index].parent_of(ref D.HashTable[index].root, new Node(word, meaning));
-                
+
                 listBox1.Items.Add("\"" + word + " : " + meaning + "\"" + "added to Dictionary!");
 
                 Print_parent(parent, new Node(word, meaning));
-                
+
                 txtword.Focus();
             }
             else
@@ -91,11 +91,11 @@ namespace Dictionary_WindowsFrom
 
         private void txtword_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
                 SelectNextControl(txtword, true, false, false, false);
-                if(!txtmeaning.Visible)
+                if (!txtmeaning.Visible)
                 {
                     btnInsert_Click(sender, e);
                 }
@@ -174,8 +174,6 @@ namespace Dictionary_WindowsFrom
                 lblword.Text = "Enter Word : ";
             }
         }
-        // hide enter meaning box
-        // and change lable of enter word to enter a char
         public void Inorder(char ch)
         {
             Inorder_rec(D.HashTable[ch - 97].root);
@@ -193,6 +191,8 @@ namespace Dictionary_WindowsFrom
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            lblword.Text = "Enter Word :";
+
             string word = txtword.Text.ToLower();
             string meaning = txtmeaning.Text.ToLower();
 
@@ -221,7 +221,7 @@ namespace Dictionary_WindowsFrom
                 listBox2.Items.Add("height : " + (node.height - 1).ToString() + '\n');
             }
 
-            else if(parent != null)
+            else if (parent != null)
             {
                 if (parent.lchild != null)
                 {
@@ -254,15 +254,16 @@ namespace Dictionary_WindowsFrom
 
         private void btnPrintDictionary_Click(object sender, EventArgs e)
         {
+            listBox2.Items.Clear(); 
             for (int i = 0; i < 26; i++)
             {
-                Inorder((char)(i+97));
+                Inorder((char)(i + 97));
             }
         }
 
         private void btnInorder_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData == Keys.Enter)
+            if (e.KeyData == Keys.Enter)
                 btnInorder_Click(sender, e);
         }
 
@@ -295,6 +296,17 @@ namespace Dictionary_WindowsFrom
                 }
 
             }
+        }
+
+        private void lblclear_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+
+        }
+
+        private void lblclearlist_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
         }
     }
 }
