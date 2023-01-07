@@ -22,13 +22,15 @@ namespace Dictionary_WindowsFrom
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            //txtword.Focus();
             txtmeaning.Visible = true;
             lblmeaning.Visible = true;
             lblword.Text = "Enter Word : ";
 
             string word = txtword.Text.ToLower();
             string meaning = txtmeaning.Text.ToLower();
+
+            if (word == null)
+                return;
 
             if (word.Length < 1)
                 return;
@@ -103,8 +105,7 @@ namespace Dictionary_WindowsFrom
             if (e.KeyCode == Keys.Delete)
             {
                 btnDelete_Click(sender, e);
-                SelectNextControl(txtword, false, false, false, false);
-
+                txtword.Clear();
             }
         }
 
@@ -132,7 +133,6 @@ namespace Dictionary_WindowsFrom
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //txtword.Focus();
             txtmeaning.Visible = false;
             lblmeaning.Visible = false;
             lblword.Text = "Enter Word : ";
@@ -193,28 +193,32 @@ namespace Dictionary_WindowsFrom
         {
             lblword.Text = "Enter Word :";
 
+            if (txtword.Text.Length < 1)
+                return;
+
             string word = txtword.Text.ToLower();
             string meaning = txtmeaning.Text.ToLower();
+            int i = word[0] - 97;
 
             if (word.Length < 1)
                 return;
 
             var xnode = new Node(word, meaning);
             int counter = 0;
-            Node parent = D.HashTable[word[0] - 97].parent_of(ref D.HashTable[word[0] - 97].root, xnode, ref counter);
+            Node parent = D.HashTable[i].parent_of(ref D.HashTable[i].root, xnode, ref counter);
 
-            if (D.HashTable[word[0] - 97].root == null)
+            if (D.HashTable[i].root == null)
             {
                 listBox2.Items.Add("this word dosen't exist in dictionary!");
                 return;
             }
 
-
+            
             if (parent == null)
             {
                 listBox2.Items.Add("Node found in root!");
 
-                var node = D.HashTable[word[0] - 97].SearchRD(ref D.HashTable[word[0] - 97].root, xnode);
+                var node = D.HashTable[i].SearchRD(ref D.HashTable[i].root, xnode);
                 listBox2.Items.Add("meaning : " + node.meaning);
                 listBox2.Items.Add("Left Child : " + Print(node.lchild));
                 listBox2.Items.Add("Right Child : " + Print(node.rchild));

@@ -10,7 +10,6 @@ namespace Dictionary_WindowsFrom
         {
             root = new Node();
             root = null;
-            //root.height = 0;
         }
         public AVLtree(string word, string meaning)
         {
@@ -111,7 +110,7 @@ namespace Dictionary_WindowsFrom
             }
         }
 
-        int Max(Node xnode, Node ynode)
+        int Max(Node xnode, Node ynode)//returns maximum height of 2 nodes
         {
             int x = GetHeight(xnode);
             int y = GetHeight(ynode);
@@ -251,7 +250,7 @@ namespace Dictionary_WindowsFrom
             if (root == null)
                 Console.WriteLine("null");
             else
-                Console.WriteLine(root.word);
+                Console.WriteLine(root.word + ' ' + root.meaning);
         }
 
         int UpdateHeight(Node node)
@@ -348,6 +347,9 @@ namespace Dictionary_WindowsFrom
         }
         public Node parent_of(ref Node root, Node xnode) // returns parent of the node we are searching for
         {
+            if (root == null)
+                return null;
+
             if (root.word == xnode.word)
                 return null;
             else if (root != null)
@@ -483,13 +485,14 @@ namespace Dictionary_WindowsFrom
 
                 flag = true;
             }
+
             root.height = UpdateHeight(root);
             if (GetBF(root) > 1)
                 Balance(ref root);
             return root;
         }
 
-        public Node Candidate(ref Node root) // deletes candidate node and balance from candidate to root
+        public Node Candidate(ref Node root) // changes root to candidate node and balance from candidate to root
         {
             if (root == null)
                 return root;
@@ -504,7 +507,7 @@ namespace Dictionary_WindowsFrom
                     if (node.rchild != null)
                         parent = node;
                 }
-                Node del = node;
+                Node candid = node;
                 if (node.lchild != null)
                     parent.rchild = node.lchild;
                 else
@@ -513,7 +516,7 @@ namespace Dictionary_WindowsFrom
                 }
                 if (GetBF(parent) > 1)
                     Balance(ref parent);
-                return del;
+                return candid;
             }
             else
             {
@@ -525,7 +528,7 @@ namespace Dictionary_WindowsFrom
                     if (node.lchild != null)
                         parent = node;
                 }
-                Node del = node;
+                Node candid = node;
                 if (node.rchild != null)
                     parent.lchild = node.rchild;
                 else
@@ -534,7 +537,7 @@ namespace Dictionary_WindowsFrom
                 }
                 if (GetBF(node.lchild) > 1)
                     Balance(ref node.lchild);
-                return del;
+                return candid;
             }
         }
     }
